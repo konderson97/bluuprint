@@ -1,0 +1,21 @@
+{
+  "name": "Training-Environment-Minimal",
+  "description": "The minimal blueprint",
+  "containers": [ {
+      "hostname": "web-server",
+      "template": "apache",
+      "peer-criteria": "HTTP-GROUP",
+      "size": "MEDIUM"
+    }
+  ],
+  "peer-criteria": [ {
+      "name": "HTTP-GROUP",
+      "max-price": "50",
+      "resource-availability": {
+        "avg-cpu-load": "50",
+        "min-free-ram": "128",
+        "min-free-disk-space": "10"
+    }
+    }
+  ]
+}
